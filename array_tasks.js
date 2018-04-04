@@ -10,12 +10,14 @@ var arrayTasks = {
 
 	insertAt: function (arr, itemToAdd, index) {
 		let newArray = [];
-		for(let i = 0; i < index; i++) {
-			newArray.push(arr[i]);
-		}
-		newArray.push(itemToAdd);
-		for(let i = index; i < arr.length; i++) {
-			newArray.push(arr[i]);
+		for(let i = 0; i < arr.length; i++) {
+			if(i === index) {
+				newArray.push(itemToAdd);
+				newArray.push(arr[i]);
+			}
+			else {
+				newArray.push(arr[i]);
+			}
 		}
 		return newArray;
 	},
@@ -33,9 +35,16 @@ var arrayTasks = {
 	},
 
 	findDuplicates: function (arr) {
-
-
-	},
+		var duplicates = [];
+    for (element of arr) {
+			if (arr.indexOf(element) !== arr.lastIndexOf(element)) {
+        if (!duplicates.includes(element)){
+            duplicates.push(element);
+        }
+      }
+    }
+        return duplicates;
+    },
 
 	removeAndClone: function (arr, valueToRemove) {
 		let newArray = [];
