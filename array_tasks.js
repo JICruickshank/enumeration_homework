@@ -31,15 +31,14 @@ var arrayTasks = {
 	},
 
 	square: function (arr) {
-		// DOESN'T WORK
-		// let newArray = arr.map(function(number) {
-		// 	number = number ** 2;
-		// });
-		// return newArray;
-		let newArray = [];
-		for(let element of arr) {
-			newArray.push(element ** 2)}
+		newArray = arr.map(function(number) {
+			return number * number;
+		});
 		return newArray;
+		// let newArray = [];
+		// for(let element of arr) {
+		// 	newArray.push(element ** 2)}
+		// return newArray;
 	},
 
 	sum: function (arr) {
