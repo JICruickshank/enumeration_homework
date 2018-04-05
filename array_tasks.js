@@ -59,19 +59,6 @@ var arrayTasks = {
         return duplicates;
     },
 
-
-		// DOESN'T WORK
-		// let duplicates = [];
-		// for(let x = 0; x < arr.length; x++ ){
-		// 	for(let i = 0; i < arr.length; i++){
-		// 		if(arr[x] === arr[i] && x !==i){
-		// 			duplicates.push(arr[i]);
-		// 		};
-		// 	}
-		// }
-		// return duplicates;
-    // },
-
 	removeAndClone: function (arr, valueToRemove) {
 		let newArray = [];
 		for(let i = 0; i < arr.length; i++) {
