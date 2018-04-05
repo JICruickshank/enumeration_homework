@@ -3,6 +3,7 @@ var arrayTasks = {
 	concat: function (arr1, arr2) {
 		// let newArray = arr1.concat(arr2);
 		// return newArray;
+
 		let newArray = [];
 		for(argument of arguments){
 			for(let element of argument){
@@ -13,22 +14,28 @@ var arrayTasks = {
 	},
 
 	insertAt: function (arr, itemToAdd, index) {
-		arr.splice(index, 0, itemToAdd);
-		return arr;
-		// let newArray = [];
-		// for(let i = 0; i < arr.length; i++) {
-		// 	if(i === index) {
-		// 		newArray.push(itemToAdd);
-		// 		newArray.push(arr[i]);
-		// 	}
-		// 	else {
-		// 		newArray.push(arr[i]);
-		// 	}
-		// }
-		// return newArray;
+		// arr.splice(index, 0, itemToAdd);
+		// return arr;
+
+		let newArray = [];
+		for(let i = 0; i < arr.length; i++) {
+			if(i === index) {
+				newArray.push(itemToAdd);
+				newArray.push(arr[i]);
+			}
+			else {
+				newArray.push(arr[i]);
+			}
+		}
+		return newArray;
 	},
 
 	square: function (arr) {
+		// DOESN'T WORK
+		// let newArray = arr.map(function(number) {
+		// 	number = number ** 2;
+		// });
+		// return newArray;
 		let newArray = [];
 		for(let element of arr) {
 			newArray.push(element ** 2)}
@@ -41,16 +48,29 @@ var arrayTasks = {
 	},
 
 	findDuplicates: function (arr) {
-		let duplicates = [];
-		for(let x = 0; x < arr.length; x++ ){
-			for(let i = 0; i < arr.length; i++){
-				if(arr[x] === arr[i] && x !==i){
-					duplicates.push(arr[i]);
-				};
-			}
-		}
-		return duplicates;
+		var duplicates = [];
+        for (element of arr){
+            if (arr.indexOf(element) !== arr.lastIndexOf(element)){
+                if (!duplicates.includes(element)){
+                    duplicates.push(element);
+                }
+            }
+        }
+        return duplicates;
     },
+
+
+		// DOESN'T WORK
+		// let duplicates = [];
+		// for(let x = 0; x < arr.length; x++ ){
+		// 	for(let i = 0; i < arr.length; i++){
+		// 		if(arr[x] === arr[i] && x !==i){
+		// 			duplicates.push(arr[i]);
+		// 		};
+		// 	}
+		// }
+		// return duplicates;
+    // },
 
 	removeAndClone: function (arr, valueToRemove) {
 		let newArray = [];
